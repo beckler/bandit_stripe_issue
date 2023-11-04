@@ -14,6 +14,7 @@ config :bandit_stripe_issues,
 # Configures the endpoint
 config :bandit_stripe_issues, BanditStripeIssuesWeb.Endpoint,
   url: [host: "localhost"],
+  adapter: Bandit.PhoenixAdapter,
   render_errors: [
     formats: [html: BanditStripeIssuesWeb.ErrorHTML, json: BanditStripeIssuesWeb.ErrorJSON],
     layout: false
