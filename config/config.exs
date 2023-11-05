@@ -15,6 +15,7 @@ config :bandit_stripe_issues,
 config :bandit_stripe_issues, BanditStripeIssuesWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
+  # adapter: Phoenix.Endpoint.Cowboy2Adapter,
   render_errors: [
     formats: [html: BanditStripeIssuesWeb.ErrorHTML, json: BanditStripeIssuesWeb.ErrorJSON],
     layout: false
@@ -60,6 +61,10 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+config :stripity_stripe,
+  api_key: "sk_test_xxxxxxreplacemexxxxxx",
+  webhook_secret: "whsec_xxxxxxreplacemexxxxxx"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
